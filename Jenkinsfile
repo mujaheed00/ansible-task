@@ -21,10 +21,10 @@ pipeline {
                         sh 'terraform plan'
                         sh 'terraform apply'
                     }
-                    }
                 }
             }
         }
+    }
         
         stage('Ansible Deployment') {
             steps {
