@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TF_VAR_key_name = 'my-key'
+        TF_VAR_key_name = 'red'
     }
 
     stages {
@@ -33,7 +33,7 @@ pipeline {
         stage('Run Ansible - Frontend') {
             steps {
                 ansiblePlaybook(
-                    credentialsId: 'my-key',
+                    credentialsId: 'red',
                     disableHostKeyChecking: true,
                     installation: 'ansible',
                     inventory: 'inventory.yaml',
@@ -48,7 +48,7 @@ pipeline {
         stage('Run Ansible - Backend') {
             steps {
                 ansiblePlaybook(
-                    credentialsId: 'my-key',
+                    credentialsId: 'red',
                     disableHostKeyChecking: true,
                     installation: 'ansible',
                     inventory: 'inventory.yaml',
