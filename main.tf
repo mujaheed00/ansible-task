@@ -5,13 +5,13 @@ provider "aws" {
 # ---------- variables (optional) ----------
 variable "key_name" {
   type    = string
-  default = "my-key"
+  default = "red"
 }
 
 variable "subnet_id" {
   type    = string
   # Replace with your subnet id or pass via -var
-  default = "subnet-0491ca8b1885b7e5e"
+  default = "subnet-0a192382de0e2bf6a"
 }
 
 variable "jenkins_allowed_cidr" {
