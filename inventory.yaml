@@ -1,4 +1,5 @@
 [frontend]
-172.31.0.25
+${aws_instance.frontend.public_ip}
+
 [backend]
-172.31.0.10
+${aws_instance.backend.public_ip}
