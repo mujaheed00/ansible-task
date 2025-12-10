@@ -1,15 +1,14 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
 # ---------------------------
 # Backend - Ubuntu
 # ---------------------------
 resource "aws_instance" "backend" {
-  ami                    = "ami-02b8269d5e85954ef"  
+  ami                    = "ami-0ecb62995f68bb549"  
   instance_type          = "t3.micro"
-  key_name               = "mumbai"
-  vpc_security_group_ids = ["sg-01cfc6e86d017a57b"]
+  key_name               = "my-key"
   subnet_id              = "subnet-0491ca8b1885b7e5e"
 
   tags = {
@@ -26,10 +25,9 @@ resource "aws_instance" "backend" {
 # Frontend - Amazon Linux
 # ---------------------------
 resource "aws_instance" "frontend" {
-  ami                    = "ami-0d176f79571d18a8f"   # Amazon Linux
+  ami                    = "ami-068c0051b15cdb816"   # Amazon Linux
   instance_type          = "t3.micro"
-  key_name               = "mumbai"
-  vpc_security_group_ids = ["sg-01cfc6e86d017a57b"]
+  key_name               = "my-key"
   subnet_id              = "subnet-04f01a3277f9dd175"
 
   tags = {
